@@ -48,13 +48,13 @@ func ShowDash(a fyne.App) {
 	// )
 
 	win.SetContent(
-
-		container.NewVBox(headtext),
-
 		container.NewGridWithColumns(1,
-		container.NewGridWithColumns(3,
-			container.NewVBox(card2,card3,),
-		),
+			container.NewVBox(
+				headtext),
+
+			container.NewGridWithColumns(1,
+				container.NewGridWithColumns(4,
+					card5, card2, card3)),
 		),
 	)
 
