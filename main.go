@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
@@ -18,11 +20,13 @@ func main() {
 	myWindow.Resize(fyne.NewSize(400, 250))
 	myWindow.SetFixedSize(true)
 
+	head := widget.NewLabel("Welcome to miniERP")
+
 	email := widget.NewEntry()
-	email.PlaceHolder = "Enter your email"
+	email.PlaceHolder = "Enter your ID"
 
 	pass := widget.NewPasswordEntry()
-	pass.PlaceHolder = "Enter your password"
+	pass.PlaceHolder = "Enter your Password"
 
 	emailID := widget.NewFormItem("Email", email)
 	password := widget.NewFormItem("Password", pass)
@@ -30,25 +34,26 @@ func main() {
 	clientForm := widget.NewForm(emailID, password)
 
 	clientForm.SubmitText = "Login"
-	messageLabel := widget.NewLabel("")
+	clientForm.CancelText = "Cancel"
 
-	progress := widget.NewProgressBarInfinite()
+	messageLabel := widget.NewLabel("")
 
 	clientForm.OnSubmit = func() {
 
-		myemail := "admin"
-		myPass := "123"
+		myemail := ""
+		myPass := ""
 		if email.Text == myemail && pass.Text == myPass {
 			ShowDash(myApp)
+			fmt.Println("great job ..")
 			myWindow.Close()
 		} else {
-			dialog.NewInformation("Invalid Email or password", "Email or Passwor invalid", myWindow).Show()
+			dialog.NewInformation("Warning !", "Email or Passwor invalid", myWindow).Show()
 		}
 
 	}
 
 	myWindow.SetContent(
-		container.NewVBox(clientForm, messageLabel, progress),
+		container.NewVBox(head, clientForm, messageLabel),
 	)
 	myWindow.ShowAndRun()
 }
