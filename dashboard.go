@@ -43,7 +43,7 @@ func ShowDash(a fyne.App) {
 		canvas.NewText("New Client", color.White),
 	)
 	// win.SetContent(
-	// 	headtext,
+	// 	headtext raihan sir,
 
 	// )
 
