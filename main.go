@@ -1,59 +1,66 @@
 package main
 
 import (
-	"fmt"
+	"database/sql"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/widget"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 var (
 	myApp    fyne.App    = app.New()
-	myWindow fyne.Window = myApp.NewWindow("Mini ERP")
+	myWindow fyne.Window = myApp.NewWindow("miniERP v0.0.1")
+	db       *sql.DB
+	err      error
 )
 
-func main() {
+func init() {
+	dbcon()
+}
 
-	myWindow.Resize(fyne.NewSize(400, 250))
+func main() {
+	myWindow.Resize(fyne.NewSize(400, 200))
 	myWindow.SetFixedSize(true)
 
 	head := widget.NewLabel("Welcome to miniERP")
+	head.Alignment = fyne.TextAlignCenter
 
-	email := widget.NewEntry()
-	email.PlaceHolder = "Enter your ID"
+	idEntry := widget.NewEntry()
+	idEntry.PlaceHolder = "Enter your ID"
 
-	pass := widget.NewPasswordEntry()
-	pass.PlaceHolder = "Enter your Password"
+	passwordEntry := widget.NewPasswordEntry()
+	passwordEntry.PlaceHolder = "Enter your password"
 
-	emailID := widget.NewFormItem("Email", email)
-	password := widget.NewFormItem("Password", pass)
+	id := widget.NewFormItem("ID", idEntry)
+	password := widget.NewFormItem("Password", passwordEntry)
 
-	clientForm := widget.NewForm(emailID, password)
+	loginForm := widget.NewForm(id, password)
 
-	clientForm.SubmitText = "Login"
-	clientForm.CancelText = "Cancel"
+	loginForm.SubmitText = "Login"
+	loginForm.CancelText = "Quit"
 
-	messageLabel := widget.NewLabel("")
+	loginForm.OnCancel = func() {
+		myWindow.Close()
+	}
 
-	clientForm.OnSubmit = func() {
+	loginForm.OnSubmit = func() {
 
-		myemail := ""
-		myPass := ""
-		if email.Text == myemail && pass.Text == myPass {
-			ShowDash(myApp)
-			fmt.Println("great job ..")
-			myWindow.Close()
+		appEmail := ""
+		appPass := ""
+		if idEntry.Text == appEmail && passwordEntry.Text == appPass {
+			Dashbord(myApp)
 		} else {
-			dialog.NewInformation("Warning !", "Email or Passwor invalid", myWindow).Show()
+			dialog.NewInformation("Warning !", "ID or Password invalid..", myWindow).Show()
 		}
 
 	}
 
 	myWindow.SetContent(
-		container.NewVBox(head, clientForm, messageLabel),
+		container.NewVBox(head, loginForm),
 	)
 	myWindow.ShowAndRun()
 }
