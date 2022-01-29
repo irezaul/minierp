@@ -14,7 +14,7 @@ func showClient(a fyne.App) {
 
 	win := myWindow
 
-	title := canvas.NewText("Please put your client details here", color.White)
+	title := canvas.NewText("Please put your client details here", color.Black)
 	title.TextSize = 20
 	title.Alignment = fyne.TextAlignCenter
 

@@ -12,9 +12,9 @@ import (
 
 func Dashbord(a fyne.App) {
 	w := myWindow
-	myWindow.Resize(fyne.NewSize(900, 400))
-
-	headtext := canvas.NewText("Welcome to miniERP", color.White)
+	myWindow.Resize(fyne.NewSize(700, 400))
+	menuItem()
+	headtext := canvas.NewText("Welcome to miniERP", color.Black)
 	headtext.TextSize = 20
 	headtext.Alignment = fyne.TextAlignCenter
 

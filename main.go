@@ -25,6 +25,7 @@ func init() {
 func main() {
 	myWindow.Resize(fyne.NewSize(400, 200))
 	myWindow.SetFixedSize(true)
+	
 
 	head := widget.NewLabel("Welcome to miniERP")
 	head.Alignment = fyne.TextAlignCenter
@@ -55,6 +56,8 @@ func main() {
 			Dashbord(myApp)
 		} else {
 			dialog.NewInformation("Warning !", "ID or Password invalid..", myWindow).Show()
+			notify:= fyne.NewNotification("Warning..", "Your banned for 1hour")
+			myApp.SendNotification(notify)
 		}
 
 	}

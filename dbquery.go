@@ -29,11 +29,11 @@ func AddClient(name, mobile, email, address string) (int64, error) {
 }
 
 // client get
-func GetClient() []map[string]interface{} {
+func GetClient() ([]map[string]interface{}, error){
 	qs := "SELECT * FROM client;"
 	rows, err := msql.GetAllRowsByQuery(qs, db)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
-	return rows
+	return rows, nil
 }
