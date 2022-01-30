@@ -9,7 +9,8 @@ import (
 
 func loginForm(a fyne.App) {
 	win := myWindow
-
+	myWindow.Resize(fyne.NewSize(400, 200))
+	myWindow.SetFixedSize(true)
 
 	head := widget.NewLabel("Welcome to miniERP")
 	head.Alignment = fyne.TextAlignCenter

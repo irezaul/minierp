@@ -12,8 +12,8 @@ func processAllClientData() [][]string {
 	tableData := [][]string{
 		{"Id", "Name", "Mobile", "Email", "Address"},
 	}
-	rows,err := GetClient()
-	if err != nil{
+	rows, err := GetClient()
+	if err != nil {
 		fmt.Println(err)
 	}
 	for i := 0; i < len(rows); i++ {
