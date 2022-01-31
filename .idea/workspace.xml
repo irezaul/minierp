@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88b5519c-eea7-4d52-bcdc-6a084d6f32d2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addclient.go" beforeDir="false" afterPath="$PROJECT_DIR$/addclient.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashbord.go" beforeDir="false" afterPath="$PROJECT_DIR$/dashbord.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbquery.go" beforeDir="false" afterPath="$PROJECT_DIR$/dbquery.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.go" beforeDir="false" afterPath="$PROJECT_DIR$/menu.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/minierp" beforeDir="false" afterPath="$PROJECT_DIR$/minierp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minierp.db" beforeDir="false" afterPath="$PROJECT_DIR$/minierp.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minierp.db.sqbpro" beforeDir="false" afterPath="$PROJECT_DIR$/minierp.db.sqbpro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,11 +37,15 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="24SHXJuCn3Qfbpoiv8DjaXjp553" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -55,6 +61,20 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

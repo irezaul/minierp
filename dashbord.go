@@ -15,7 +15,11 @@ func Dashbord(a fyne.App) {
 	myWindow.Resize(fyne.NewSize(700, 400))
 	menuItem()
 
-	head := widget.NewLabel("Welcome to miniERP")
+	head := widget.NewCard(
+		"Welcome to miniERP",
+		"MT MART ",
+		canvas.NewRectangle(color.White),
+	)
 
 	btn1 := widget.NewButton("Create New Client", func() {
 		showClient(myApp)
