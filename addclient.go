@@ -39,7 +39,7 @@ func showClient(a fyne.App) {
 	clientForm.OnCancel = func() {
 		Dashbord(myApp)
 	}
-
+	
 	clientForm.OnSubmit = func() {
 		name := nameEntry.Text
 		mobile := mobileEntry.Text
@@ -53,6 +53,7 @@ func showClient(a fyne.App) {
 		fmt.Println(id)
 
 	}
+	
 	win.SetContent(container.NewVBox(title, clientForm))
 
 	win.Show()

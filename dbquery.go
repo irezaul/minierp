@@ -18,6 +18,7 @@ func AddClient(name, mobile, email, address string) (int64, error) {
 	data.Set("email", email)
 	data.Set("address", address)
 
+	
 	pid, err := msql.InsertIntoAnyTable(data, db)
 	if err != nil {
 		log.Println(err)

@@ -15,9 +15,7 @@ func Dashbord(a fyne.App) {
 	myWindow.Resize(fyne.NewSize(700, 400))
 	menuItem()
 
-	headtext := canvas.NewText("Welcome to miniERP", color.Black)
-	headtext.TextSize = 20
-	headtext.Alignment = fyne.TextAlignCenter
+	head := widget.NewLabel("Welcome to miniERP")
 
 	btn1 := widget.NewButton("Create New Client", func() {
 		showClient(myApp)
@@ -39,7 +37,7 @@ func Dashbord(a fyne.App) {
 		container.NewVBox(
 			container.NewGridWithColumns(1,
 				container.NewGridWithColumns(1,
-					container.NewCenter(headtext),
+					container.NewCenter(head),
 				),
 				container.NewGridWithColumns(3,
 					container.NewVBox(btn1, btn2),

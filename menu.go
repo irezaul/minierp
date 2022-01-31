@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/theme"
@@ -21,6 +22,7 @@ func menuItem() {
 	})
 	menuItem4 := fyne.NewMenuItem("logout", func() {
 		loginForm(myApp)
+		fmt.Println("Logout Successfully...! ")
 	})
 
 	newMenu1 := fyne.NewMenu("File", menuItem3, menuItem4)
